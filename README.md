@@ -29,7 +29,7 @@ Example:
 will send SESSION, TIME and END requests to echo-server.
 
 `echo-client.exe 127.0.0.1 random 10`
-will send 10 random rquests and END request to echo-server.
+will send 10 random requests and END request to echo-server.
 
 
 

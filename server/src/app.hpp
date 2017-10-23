@@ -48,13 +48,12 @@ namespace echosrv {
             std::string const formatted_msg = GIE_FORMAT(utc_time() << ", " << msg);
 
 
-            {
-                std::lock_guard<std::mutex> guard(m_log_lock);
-                m_log << formatted_msg << std::endl;
-            }
+            std::lock_guard<std::mutex> guard(m_log_lock);
+
+            m_log << formatted_msg << std::endl;
 
             if (m_log.bad()) {
-                GIE_LOG("Failed to write into log file: " << formatted_msg );
+                GIE_LOG("Failed to write into log file: " << formatted_msg);
             }
         }
 
